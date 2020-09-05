@@ -1,0 +1,42 @@
+{%extends 'base.html' %} {%block content%}{%load staticfiles%} {%load bootstrap4%}
+<style type="text/css">
+    body,
+    html {
+        height: 100%;
+        font-family: 'Alata';
+    }
+    /* The hero image */
+    
+    .bg {
+        /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+        background-image: -webkit-linear-gradient(65deg, #a683e3 50%, #e4e9fd 50%);
+        /* Set a specific height */
+        height: 100%;
+        /* Position and center the image to scale nicely on all screens */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        padding: 20px;
+    }
+    
+    .container {
+        text-align: center;
+        margin: 50px auto;
+    }
+</style>
+<div class="bg">
+    <form method="POST" class="container">
+        <h1>SignIn</h1>
+        {%csrf_token%} {%bootstrap_form form%}
+        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit" />
+        <br />
+        <button type="button" class="btn btn-outline-info btn-lg btn-block">
+      <a href="{%url 'tutapp:signup'%}" style="color: black"
+        >Create an account</a
+      >
+    </button>
+        <a href="{%url 'reset_password'%}" style="color: black">Forgot Password</a>
+    </form>
+</div>
+{%endblock%}

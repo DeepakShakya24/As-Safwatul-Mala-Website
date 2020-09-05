@@ -1,0 +1,259 @@
+{%extends 'base.html'%} {%block content%} {%load staticfiles%}
+<!--External CSS-->
+{%if user.is_superuser%}
+<style type="text/css">
+    html {
+        font-family: "Alata", sans-serif;
+        line-height: 0;
+    }
+    
+    #header {
+        color: #ffffff;
+        margin-top: 35px;
+    }
+    
+    .container-fluid {
+        padding: 3% 15% 0 15%;
+    }
+    
+    h1 {
+        size: 3rem;
+        line-height: 1.5;
+    }
+    /* Navigation Bar */
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .nav-item {
+        padding: 0 15px;
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+    }
+    
+    #description {
+        margin-top: 40px;
+    }
+    
+    .logo {
+        height: 40px;
+        width: auto;
+        margin-right: 5px;
+        background-color: #ffffff;
+        border-radius: 50%;
+    }
+    
+    #footer {
+        text-align: center;
+        padding: 7% 15%;
+    }
+    
+    .social-icon {
+        margin: 20px 10px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    .quote-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+        height: auto;
+    }
+    
+    @media (max-width: 1028px) {
+        .quote-img {
+            width: 370px;
+        }
+    }
+    
+    .desc-img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .heading {
+        text-align: center;
+        font-family: "Merriweather", serif;
+    }
+    
+    .about {
+        padding: 10px;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+</style>
+
+<section id="header">
+    <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="{%url 'homepage' %}"><img class="logo" src="{%static 'images/logo.png'%}" />As Safwatul Mala
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i>{{user.username}}</a
+            >
+          </li>
+          {%if user.is_authenticated%}
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'logout'%}">Logout</a>
+                    </li>
+                    {%else%}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'login'%}">Login</a>
+                    </li>
+                    {%endif%}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<section id="course_content">
+    <div class="container-fluid">
+        <h1>
+            <strong><em>Tajweed-2</em></strong>
+        </h1>
+
+        <h4>
+            <strong><em>Nabr</em></strong>
+        </h4>
+        <ul>
+            {%for i in tajweed2_content%}
+            <li><a href="{{i.id}}" target="_blank">{{i.tajweed2_title}}</a></li>
+            {%endfor%}
+            <li><a href="#">1st circumstance</a></li>
+            <li><a href="#">Exceptions of first circumstance</a></li>
+            <li><a href="#">2nd circumstance</a></li>
+            <li><a href="#">3rd +4thcircumstance</a></li>
+            <li><a href="#">) 5the circumstance</a></li>
+        </ul>
+
+        <h4>
+            <strong><em>Siffat Al Hurrof </em></strong>
+        </h4>
+        <ul>
+            <li><a href="#">Introduction to sifaat</a></li>
+            <li>Sifaat lazima (paired)</li>
+            <ul>
+                <li><a href="#">Hams 1</a></li>
+                <li><a href="#">Hams 2 + Jahar1</a></li>
+                <li><a href="#">Jahar2</a></li>
+                <li><a href="#">Jahar3</a></li>
+                <li><a href="#">Jahar4</a></li>
+                <li><a href="#">Shiddah letters</a></li>
+                <li><a href="#">Tawasut letters</a></li>
+                <li><a href="#">Rikhawah letters</a></li>
+                <li><a href="#">Ist'laa</a></li>
+                <li><a href="#">Istifaal</a></li>
+                <li><a href="#">Itbaaq</a></li>
+                <li><a href="#">Infitaah</a></li>
+            </ul>
+            <li>Sifaat Lazimah Unpaired</li>
+            <ul>
+                <li><a href="#">Safeer + leen+ Ghunnah</a></li>
+                <li><a href="#">Tafashi+ takraar</a></li>
+                <li><a href="#">Inhiraaf</a></li>
+                <li><a href="#">Istitalah</a></li>
+            </ul>
+        </ul>
+
+        <h4>
+            <strong><em>Tafkheem and Tarqeeq</em></strong>
+        </h4>
+        <ul>
+            <li><a href="#">Introduction to tafkheem wa tarqreeq</a></li>
+            <li><a href="#">Division of letters according to strength</a></li>
+            <li><a href="#">3 level school for mustalia</a></li>
+            <li><a href="#">5levels school for mustalia</a></li>
+            <li>Letters which sometimes mufakham</li>
+            <ul>
+                <li><a href="#">Alif maddah</a></li>
+                <li><a href="#">Laam min lafz Al jalalah</a></li>
+                <li><a href="#">Raw</a></li>
+            </ul>
+            <li><a href="#">Tarqeeq</a></li>
+        </ul>
+
+        <h4>
+            <strong><em>Idghamaat</em></strong>
+        </h4>
+        <ul>
+            <li><a href="#">Introduction to relationship of letters</a></li>
+            <li><a href="#">Mutamasilaan</a></li>
+            <li><a href="#">Mutajanisaan</a></li>
+            <li><a href="#">Mutaqaribaan</a></li>
+            <li><a href="#">Mutaba'daan</a></li>
+        </ul>
+
+        <h4>
+            <strong><em>Introduction to Grammar </em></strong>
+        </h4>
+        <ul>
+            <li><a href="#">Ism</a></li>
+            <li><a href="#">Fe'l</a></li>
+            <li><a href="#">Harf</a></li>
+        </ul>
+
+        <h4>
+            <strong><em> Hamzatul Wasl </em></strong>
+        </h4>
+        <ul>
+            <li><a href="#">Hamzatul wasl in Verbs</a></li>
+            <li><a href="#">Hamzatul wasl in nouns</a></li>
+            <li><a href="#">Special word with two hamzatul wasal</a></li>
+            <li><a href="#">Hamzatulwasl in huroof</a></li>
+            <li>Meeting of two hamza</li>
+            <ul>
+                <li><a href="#">Two hamza Qat'</a></li>
+                <li><a href="#">Hamzatul wasal precedes hamzatul Qat'</a></li>
+                <li><a href="#">Hamztatul Qat' precedes Hamzatul wasa</a></li>
+                <li><a href="#">Ibdaal</a></li>
+                <li><a href="#">Tasheel</a></li>
+            </ul>
+        </ul>
+    </div>
+</section>
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <span class="text-muted">
+      <a
+        href="https://m.facebook.com/story.php?story_fbid=131259521973743&id=105055097927519"
+        ><i class="social-icon fab fa-facebook-f"></i
+      ></a>
+      <a href="#"><i class="social-icon fab fa-twitter"></i></a>
+      <a href="#"><i class="social-icon fab fa-instagram"></i></a>
+      <a href="mailto:safwatulmala@gmail.com"
+        ><i class="social-icon fas fa-envelope"></i
+      ></a>
+      <p>© Copyright 2020 As Safwatul Mala</p>
+    </span>
+    </div>
+</footer>
+
+{%else%}
+<script>
+    if (window.confirm("Please Login to access this Page.Click OK for login")) {
+        window.open("https://127.0.0.1:8000/login/", "_blank");
+    }
+</script>
+{%endif%} {%endblock%}

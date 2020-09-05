@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load staticfiles%}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>As Safwatul Mala</title>
+
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet" />
+
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <!--Font Awesome CDN-->
+    <script src="https://kit.fontawesome.com/b9c207240a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}" />
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}" />
+    <style type="text/css">
+        .l1 {
+            background: #121212;
+            color: white;
+        }
+    </style>
+    <div class="jumbotron">
+        <ul class="list-group">
+            <li class="list-group-item active" style="background:#121212;">
+                <h3 style=" text-align: center; font-family: Alata; ">{{tajweed3_content_detail.tajweed2_title}}</h3>
+            </li>
+            <li class="list-group-item">
+                <img src="{%static 'images/anis-coquelet-LanJEVFzxPw-unsplash.jpg'%}" alt=" " class=" img-fluid img-thumbnail ">
+            </li>
+            <li class="list-group-item " oncontextmenu="return false; ">
+                <audio controls width='400' controlsList="nodownload ">
+                <source src="{{tajweed3_content_detail.tajweed2_audio_file.url}} " type="audio/mp3"/>
+              </audio>
+            </li>
+        </ul>
+    </div>
+    <script>
+    </script>
+    </body>
+
+</html>

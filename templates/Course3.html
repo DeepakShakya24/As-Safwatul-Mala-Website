@@ -1,0 +1,232 @@
+{%extends 'base.html'%} {%block content%} {%load staticfiles%}
+<!--External CSS-->
+{%if request.user.is_superuser %}
+<style type="text/css">
+    html {
+        font-family: "Alata", sans-serif;
+        line-height: 0;
+    }
+    
+    #header {
+        color: #ffffff;
+        margin-top: 35px;
+    }
+    
+    .container-fluid {
+        padding: 3% 15% 0 15%;
+    }
+    
+    h1 {
+        size: 3rem;
+        line-height: 1.5;
+    }
+    /* Navigation Bar */
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .nav-item {
+        padding: 0 15px;
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+    }
+    
+    #description {
+        margin-top: 40px;
+    }
+    
+    .logo {
+        height: 40px;
+        width: auto;
+        margin-right: 5px;
+        background-color: #ffffff;
+        border-radius: 50%;
+    }
+    
+    #footer {
+        text-align: center;
+        padding: 7% 15%;
+    }
+    
+    .social-icon {
+        margin: 20px 10px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    .quote-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+        height: auto;
+    }
+    
+    @media (max-width: 1028px) {
+        .quote-img {
+            width: 370px;
+        }
+    }
+    
+    .desc-img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .heading {
+        text-align: center;
+        font-family: "Merriweather", serif;
+    }
+    
+    .about {
+        padding: 10px;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+</style>
+
+<section id="header">
+    <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="{%url 'homepage' %}"><img class="logo" src="{%static 'images/logo.png'%}" />As Safwatul Mala
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i>{{user.username}}</a
+            >
+          </li>
+          {%if user.is_authenticated%}
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'logout'%}">Logout</a>
+                    </li>
+                    {%else%}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'login'%}">Login</a>
+                    </li>
+                    {%endif%}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<section id="course_content">
+    <div class="container-fluid">
+        <h1>
+            <strong><em>Tajweed-3</em></strong>
+        </h1>
+
+        <h4>
+            <strong><em> Waqf </em></strong>
+        </h4>
+        <ul>
+            {%for i in tajweed3_content%}
+            <li><a href="{{i.id}}" target="_blank">{{i.tajweed3_title}}</a></li>
+            {%endfor%}
+            <li><a href="#">Waqaf and its Type</a></li>
+            <li><a href="#">Ibtidaaa</a></li>
+            <li><a href="#">Qat'</a></li>
+            <li>Sakat</li>
+            <ul>
+                <li><a href="#">Saktaat wajib</a></li>
+                <li><a href="#">Saktaat Jaiz</a></li>
+            </ul>
+            <li><a href="#">Stopping at the end of words</a></li>
+            <li>Types of endings</li>
+            <ul>
+                <li><a href="#">Sahih endings</a></li>
+                <li><a href="#">Mu'tal endings</a></li>
+            </ul>
+            <li>Stopping at sahih endings</li>
+            <ul>
+                <li><a href="#">Raoum</a></li>
+                <li><a href="#">Ishmam</a></li>
+                <li><a href="#">Sakoon ul Mahadh only 1</a></li>
+                <li><a href="#">Sakoon al mahadh only 2</a></li>
+                <li><a href="#">Alwaqaf Bil Hazaf</a></li>
+                <li><a href="#">Alwaqaf Bil Ibdaal</a></li>
+            </ul>
+            <li>Stopping at mu'taal endings</li>
+            <ul>
+                <li><a href="#">General Rules</a></li>
+                <li><a href="#">Alif madiyah 1</a></li>
+                <li><a href="#">Alif madiyah 2</a></li>
+                <li><a href="#">Waoo madiyah</a></li>
+                <li><a href="#">Yaa madiyah</a></li>
+            </ul>
+        </ul>
+
+        <h4>
+            <strong><em><a href="#">Maqtoo wal musool </a> </em></strong
+      >
+    </h4>
+
+    <h4>
+      <strong
+        ><em><a href="#">Ta'aat </a> </em></strong
+      >
+    </h4>
+
+    <h4>
+      <strong><em>Special words of Hafs an Asim </em></strong>
+        </h4>
+        <ul>
+            <li><a href="#">Week 1</a></li>
+            <li><a href="#">Week 2</a></li>
+            <li><a href="#">Week 3</a></li>
+        </ul>
+
+        <h4>
+            <strong><em>Writing of the Quran </em></strong>
+        </h4>
+        <ul>
+            <li><a href="#">Week 1</a></li>
+            <li><a href="#">Week 2</a></li>
+            <li><a href="#">Week 3</a></li>
+            <li><a href="#">Week 4</a></li>
+        </ul>
+    </div>
+</section>
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <span class="text-muted">
+      <a
+        href="https://m.facebook.com/story.php?story_fbid=131259521973743&id=105055097927519"
+        ><i class="social-icon fab fa-facebook-f"></i
+      ></a>
+      <a href="#"><i class="social-icon fab fa-twitter"></i></a>
+      <a href="#"><i class="social-icon fab fa-instagram"></i></a>
+      <a href="mailto:safwatulmala@gmail.com"
+        ><i class="social-icon fas fa-envelope"></i
+      ></a>
+      <p>© Copyright 2020 As Safwatul Mala</p>
+    </span>
+    </div>
+</footer>
+{%else%}
+<script>
+    if (
+        window.confirm("Please Login with wrong credentials.Click OK for login")
+    ) {
+        window.open("https://127.0.0.1:8000/login/", "_blank");
+    }
+</script>
+{%endif%} {%endblock%}

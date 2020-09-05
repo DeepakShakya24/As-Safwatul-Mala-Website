@@ -1,0 +1,183 @@
+{%extends 'base.html'%} {%block content%} {%load staticfiles%}
+<style type="text/css">
+    html {
+        font-family: 'Alata', sans-serif;
+        line-height: 0;
+    }
+    
+    #header {
+        color: #ffffff;
+        margin-top: 35px;
+    }
+    
+    .container-fluid {
+        padding: 3% 15% 0 15%;
+    }
+    
+    h1 {
+        size: 3rem;
+        line-height: 1.5;
+    }
+    /* Navigation Bar */
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .nav-item {
+        padding: 0 15px;
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+    }
+    
+    #description {
+        margin-top: 40px;
+    }
+    
+    .logo {
+        height: 40px;
+        width: auto;
+        margin-right: 5px;
+        background-color: #ffffff;
+        border-radius: 50%;
+    }
+    
+    #footer {
+        text-align: center;
+        padding: 7% 15%;
+    }
+    
+    .social-icon {
+        margin: 20px 10px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    .quote-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+        height: auto;
+    }
+    
+    @media (max-width: 1028px) {
+        .quote-img {
+            width: 370px;
+        }
+    }
+    
+    .desc-img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .heading {
+        text-align: center;
+        font-family: 'Merriweather', serif;
+    }
+    
+    .about {
+        padding: 10px;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+</style>
+
+<section id="header">
+    <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="{%url 'homepage' %}"><img class="logo" src="{%static 'images/logo.png'%}">As Safwatul Mala</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        </nav>
+    </div>
+</section>
+
+<section id="description">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 class="heading">Lines taken from Muqaddimmah By Imam Ibn ul Jazari</h3>
+                <p>The following lines taken from Muqaddimmah, very aptly define Tajweed and its importance. In a very beautiful poetry Imam Jazari throws light upon the subject, thus encouraging us to learn Tajweed</p>
+                <h1 class="heading">What is Tajweed</h1>
+                <p><img class="quote-img" src="{%static 'images/quotes/1.png'%}" alt=""></p>
+                <h3 class="heading">Translation</h3>
+                <p>It(Tajweed) is also the beautificationof recitation,And anadornmentof pronunciationand reading.</p>
+                <p><img class="quote-img" src="{%static 'images/quotes/2.png'%}" alt=""></p>
+                <h3 class="heading">Translation</h3>
+                <p>And it(Tajweed) is giving the letterits required rightsOf each and every characteristic as well as (giving each letter its) presentedrights (or dues)</p>
+                <p>The above lines clearly state that Tajweed is the art of reading the Book of Allah correctly. Learning the rules of recitation and reading them beautifully is an onus on every Muslim.</p>
+                <h1 class="heading">Importance of Tajweed</h1>
+                <p><img class="quote-img" src="{%static 'images/quotes/3.png'%}" alt=""></p>
+                <h3 class="heading">Translation</h3>
+                <p>The practical application of Tajweed is without doubt compulsory. Who does not read the Quran correctlyis a sinner</p>
+                <p><img class="quote-img" src="{%static 'images/quotes/4.png'%}" alt=""></p>
+                <h3 class="heading">Translation</h3>
+                <p>Because this Quran was revealed to us by Allah in this formAnd exactly like this(with Tajweed)it reached us (from our Prophet, then related in authentic chains over generations to our present day Shuyookh and those with ijaazah)</p>
+                <p>The above lines throw light upon the importance of Tajweed in the life of a Muslim. Itis deemed compulsory on us to learn Tajweed so that we can read the Book of Allah as it was revealed.</p>
+                <h1 class="heading">About As Safwatul Mala</h1>
+                <h2 class="heading">As-Safwatul Mala</h2>
+                <h3 class="heading">Among the High-Ranking Elite</h3>
+                <p>The word is taken from the PoetryHirz Al Amani Wa Wajhat Tahani By Imam Shatabi</p>
+                <p>In the prelude to understanding the word, its important we refer to various ahadith highlighting the precious place a Qariof Quran has in the eyes of Allah.</p>
+                <p>The following words explain the word As-Safwatul mala and the importance of a reciter of Quran</p>
+                <p><img class="quote-img" src="{%static 'images/quotes/5.png'%}" alt=""></p>
+                <p>So, O reciter of the Quran! Hold firmly on to it, honoring and respecting it in all conditions</p>
+                <p>In this line the Qari is addressed regarding the qualities that he should have. In the following line the rewardsfor the Qari are given.</p>
+
+            </div>
+            <div class="col-lg-6">
+                <img class="desc-img" src="{%static 'images/logo.png'%}" alt="logo">
+                <p><img class="quote-img" src="images/quotes/6.png'%}" alt=""></p>
+                <p>And those who hold fast to the Book (act on its teachings) and perform salah. We will never waste the rewards of those who do righteous deeds.</p>
+                <p>In a Hadith, itcomes</p>
+                <p><img class="quote-img" src="{%static 'images/quotes/7.png'%}" alt=""></p>
+                <p>The Book of Allah, in it is guidance and nur, so grab on to the Book of Allah and hold firmly on to it.</p>
+                <p>In another Hadith it is reported:</p>
+                <p><img class="quote-img" src="{%static 'images/quotes/8.png'%}" alt=""></p>
+                <p>Whoever holds on to it,(The Quran) and practices upon it will be upon guidance, and whoever fails to do so will be misled.</p>
+                <p>It means someone who honorsand exalts will have the same meaning</p>
+                <p><img class="quote-img" src="{%static 'images/quotes/9.png" alt=""></p>
+                <p>Enjoy well (all comingyour way in the gardens of paradise!)<br>Your parents will be adorned with garments of pure light, crown (of honor) and (other)adornments.</p>
+                <h3 class="heading">Explanation</h3>
+                <p><img class="quote-img" src="images/quotes/10.png'%}" alt=""></p>
+                <p>So what do you think of the children (Qari-of these parents) when they are rewarded? They are the family of Allah and the high-ranking elite</p>
+                <h3 class="heading">Explanation</h3>
+                <p><img class="quote-img" src="{%static 'images/quotes/11.png'%}" alt=""></p>
+                <p>Verily Allah has family from amongst man. It was said: who are they O Messenger of Allah? He saw replied: The people of the Quran, they are the family of Allah and his close and dear ones.”</p>
+                <p>The above verses and hadith explain vehemently the meaning and origin of the word As Safwatul Mala.-Among the high Ranking Elite. The ranks of the people whom Allah loves and calls them His Family. Thepeople who are beloved to Him. Aperson
+                    who recites the Quran in the way it was revealed will be amongst them.</p>
+            </div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <p>This platform is a humble effort for teaching Tajweed to Sisters. Spearheaded by a very talented and gifted teacher, whom Allah chose for this cause. The explicit purposeof forming this platform is spreading the correct way of reciting the
+                Book of Allah. Spreading the knowledge related to the Tajweed, the science of reciting Quran correctly. We pray and hope that Tajweedis made widespread and reachesevery household. With aspirations of being the family of Allah, wepray and
+                hope the purpose of this platform is met by adding more and more people to the High-Ranking Elite.</p>
+        </div>
+    </div>
+</section>
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <span class="text-muted">
+                <a href="https://m.facebook.com/story.php?story_fbid=131259521973743&id=105055097927519" target="_blank"><i class="social-icon fab fa-facebook-f"></i></a>
+                <a href="#"><i class="social-icon fab fa-twitter" target="_blank"></i></a>
+                <a href="#"><i class="social-icon fab fa-instagram" target="_blank"></i></a>
+                <a href="mailto:safwatulmala@gmail.com" target="_blank"><i class="social-icon fas fa-envelope"></i></a>
+                <p>© Copyright 2020 As Safwatul Mala</p>
+            </span>
+    </div>
+</footer>
+{%endblock%}

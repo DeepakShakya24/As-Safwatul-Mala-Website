@@ -1,0 +1,266 @@
+{%extends 'base.html'%} {%block content%} {%load staticfiles%}
+
+<style type="text/css">
+    html {
+        font-family: "Alata", sans-serif;
+        line-height: 0;
+    }
+    
+    body {
+        text-align: center;
+    }
+    
+    #header {
+        color: #ffffff;
+    }
+    
+    .container-fluid {
+        padding: 3% 15% 0 15%;
+    }
+    
+    h1 {
+        size: 3rem;
+        line-height: 1.5;
+    }
+    /* Navigation Bar */
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .nav-item {
+        padding: 0 15px;
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+    }
+    
+    #description {
+        margin-top: 40px;
+    }
+    
+    .logo {
+        height: 40px;
+        width: auto;
+        margin-right: 5px;
+        background-color: #ffffff;
+        border-radius: 50%;
+    }
+    
+    #footer {
+        text-align: center;
+        padding: 7% 15%;
+    }
+    
+    .social-icon {
+        margin: 20px 10px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    .quote-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+        height: auto;
+    }
+    
+    @media (max-width: 1028px) {
+        .quote-img {
+            width: 370px;
+        }
+    }
+    
+    .desc-img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .heading {
+        text-align: center;
+        font-family: "Merriweather", serif;
+    }
+    
+    .about {
+        padding: 10px;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+    
+    hr.style18 {
+        height: 30px;
+        border-style: solid;
+        border-color: #8c8b8b;
+        border-width: 1px 0 0 0;
+        border-radius: 20px;
+    }
+    
+    hr.style18:before {
+        display: block;
+        content: "";
+        height: 30px;
+        margin-top: -31px;
+        border-style: solid;
+        border-color: #8c8b8b;
+        border-width: 0 0 1px 0;
+        border-radius: 20px;
+    }
+    
+    hr.style7 {
+        border-top: 1px solid #8c8b8b;
+        border-bottom: 1px solid #fff;
+    }
+    
+    hr.divider {
+        border: dotted #000000 6px;
+        border-bottom: none;
+        width: 4%;
+        margin: 10px auto;
+    }
+    
+    .dec {
+        background-color: #ecfafc;
+        text-align: center;
+        /* padding: 40px; */
+        margin: 10px;
+    }
+    
+    .heading {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 4em;
+        padding: 10px 0 10px 0;
+    }
+    
+    .asm {
+        font-size: 2em;
+    }
+    
+    .desc-img {
+        padding: 10px;
+        width: 800px;
+    }
+    
+    .team {
+        background-color: #ffffff;
+        padding: 40px;
+        margin: 10px;
+    }
+    
+    .team-name {
+        font-size: 50px;
+    }
+    
+    .team-description {
+        font-size: 30px;
+    }
+    
+    .footer {
+        background-color: #ecfafc;
+    }
+</style>
+
+<section id="header">
+    <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="{%url 'homepage'%}"><img class="logo" src="{%static 'images/logo.png'%}" />As Safwatul Mala
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Course</a
+              >
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{%url 'tutapp:list'%}"
+                  >Tajweed Level 1</a
+                >
+                <a class="dropdown-item" href="{%url 'tajweed2:list'%}"
+                  >Tajweed Level 2</a
+                >
+                <a class="dropdown-item" href="{%url 'tajweed3:list'%}"
+                  >Tajweed Level 3</a
+                >
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{%url 'Advancetilawah:list'%}"
+                  >Advance Tilawah</a
+                >
+                <a class="dropdown-item" href="{%url 'Jazariyyah:list'%}"
+                  >Jazariyyah</a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i>
+              {{user.username}}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container-fluid dec">
+    <div class="container-fluid team">
+      <div class="container">
+        <div class="team-name">Sr. Hina Malik</div>
+        <div class="team-description">
+          Sr. Hina Malik is the pioneer and driving force behind As Safwatul
+          Mala. Her passion to teach the Word of Allah in its correct form, led
+          her to form the platform. She aims to help sisters learn Tajweed in
+          her simple yet effective eloquent style. She is a qualified teacher
+          who holds Ijaza in various Qiraat. She has been teaching Tajweed
+          online for many years. Her Qualifications included and not limited to:
+
+          <ul>
+            <li>Master in Special Education</li>
+            <li>Diploma in Islamic Education from Al Huda</li>
+            <li>
+              Ijahain Memorization Of Quran, RiwayahAn Asim (Hafs & Shubah)-Ash
+              Shatabiyyah
+            </li>
+            <li>Ijazah in Manthomatul Muqaddamah (Jazariyyah)</li>
+            <li>Ijazah in Recitation of Qaloon Ibn Nafeh</li>
+            <li>Working on Ijazah in Recitation of Ibn Katheer</li>
+            <li>Working on Itqaan in Memorizartion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer mt-auto py-3" id="contact">
+  <div class="container">
+    <span class="text-muted">
+      <a
+        href="https://m.facebook.com/story.php?story_fbid=131259521973743&id=105055097927519"
+        ><i class="social-icon fab fa-facebook-f"></i
+      ></a>
+                        <a href="#"><i class="social-icon fab fa-twitter"></i></a>
+                        <a href="#"><i class="social-icon fab fa-instagram"></i></a>
+                        <a href="mailto:safwatulmala@gmail.com"><i class="social-icon fas fa-envelope"></i
+      ></a>
+                        <p>© Copyright 2020 As Safwatul Mala</p>
+                        </span>
+                        </div>
+                        </footer>
+                        {%endblock%}

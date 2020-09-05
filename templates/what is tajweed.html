@@ -1,0 +1,235 @@
+{%extends 'base.html'%} {%block content%} {%load staticfiles%}
+
+<style type="text/css">
+    html {
+        font-family: "Alata", sans-serif;
+        line-height: 0;
+    }
+    
+    body {
+        text-align: center;
+    }
+    
+    #header {
+        color: #ffffff;
+    }
+    
+    .container-fluid {
+        padding: 3% 15% 0 15%;
+    }
+    
+    h1 {
+        size: 3rem;
+        line-height: 1.5;
+    }
+    /* Navigation Bar */
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .nav-item {
+        padding: 0 15px;
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+    }
+    
+    #description {
+        margin-top: 40px;
+    }
+    
+    .logo {
+        height: 40px;
+        width: auto;
+        margin-right: 5px;
+        background-color: #ffffff;
+        border-radius: 50%;
+    }
+    
+    #footer {
+        text-align: center;
+        padding: 7% 15%;
+    }
+    
+    .social-icon {
+        margin: 20px 10px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    .quote-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+        height: auto;
+    }
+    
+    @media (max-width: 1028px) {
+        .quote-img {
+            width: 370px;
+        }
+    }
+    
+    .desc-img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .heading {
+        text-align: center;
+        font-family: "Merriweather", serif;
+    }
+    
+    .about {
+        padding: 10px;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+    
+    hr.style18 {
+        height: 30px;
+        border-style: solid;
+        border-color: #8c8b8b;
+        border-width: 1px 0 0 0;
+        border-radius: 20px;
+    }
+    
+    hr.style18:before {
+        display: block;
+        content: "";
+        height: 30px;
+        margin-top: -31px;
+        border-style: solid;
+        border-color: #8c8b8b;
+        border-width: 0 0 1px 0;
+        border-radius: 20px;
+    }
+    
+    hr.style7 {
+        border-top: 1px solid #8c8b8b;
+        border-bottom: 1px solid #fff;
+    }
+    
+    hr.divider {
+        border: dotted #000000 6px;
+        border-bottom: none;
+        width: 4%;
+        margin: 10px auto;
+    }
+</style>
+<section id="header">
+    <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="{%url 'homepage'%}"><img class="logo" src="{%static 'images/logo.png'%}" />As Safwatul Mala
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Course</a
+              >
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{%url 'tutapp:list'%}"
+                  >Tajweed Level 1</a
+                >
+                <a class="dropdown-item" href="{%url 'tajweed2:list'%}"
+                  >Tajweed Level 2</a
+                >
+                <a class="dropdown-item" href="{%url 'tajweed3:list'%}"
+                  >Tajweed Level 3</a
+                >
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{%url 'Advancetilawah:list'%}"
+                  >Advance Tilawah</a
+                >
+                <a class="dropdown-item" href="{%url 'Jazariyyah:list'%}"
+                  >Jazariyyah</a
+                >
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i> Account</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section id="description">
+  <div class="container-fluid">
+    <h3 class="heading">Lines taken from Muqaddimmah By Imam Ibn ul Jazari</h3>
+    <p>
+      The following lines taken from Muqaddimmah, very aptly define Tajweed and
+      its importance. In a very beautiful poetry Imam Jazari throws light upon
+      the subject, thus encouraging us to learn Tajweed
+    </p>
+    <hr class="style18" />
+    <h1 class="heading">What is Tajweed</h1>
+    <p>
+      <img class="quote-img" src="{%static 'images/quotes/1.png'%}" alt="" />
+    </p>
+    <h3 class="heading">Translation</h3>
+    <p>
+      It (Tajweed) is also the beautification of recitation and an adornment of
+      pronunciation and reading.
+    </p>
+    <hr class="divider" />
+    <p>
+      <img class="quote-img" src="{%static 'images/quotes/2.png'%}" alt="" />
+    </p>
+    <h3 class="heading">Translation</h3>
+    <p>
+      <em
+        >And it (Tajweed) is giving the letter its required rights of each and
+        every characteristic as well as (giving each letter its) presented
+        rights (or dues)</em
+      >
+    </p>
+    <hr class="divider" />
+    <p>
+      The above lines clearly state that Tajweed is the art of reading the Book
+      of Allah correctly. Learning the rules of recitation and reading them
+      beautifully is an on us on every Muslim.
+    </p>
+    <hr class="style7" />
+  </div>
+</section>
+
+<footer class="footer mt-auto py-3" id="contact">
+  <div class="container">
+    <span class="text-muted">
+      <a
+        href="https://m.facebook.com/story.php?story_fbid=131259521973743&id=105055097927519"
+        ><i class="social-icon fab fa-facebook-f"></i
+      ></a>
+                        <a href="#"><i class="social-icon fab fa-twitter"></i></a>
+                        <a href="#"><i class="social-icon fab fa-instagram"></i></a>
+                        <a href="mailto:safwatulmala@gmail.com"><i class="social-icon fas fa-envelope"></i
+      ></a>
+                        <p>© Copyright 2020 As Safwatul Mala</p>
+                        </span>
+                        </div>
+                        </footer>
+
+                        {%endblock%}
