@@ -126,6 +126,7 @@ STATIC_DIRS = [STATIC_ROOT, ]
 
 MEDIA_URL = '/media/'
 
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'list'
 LOGOUT_REDIRECT_URL = 'homepage'
 
@@ -135,3 +136,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'deepakshakya4455@gmail.com'
 EMAIL_HOST_PASSWORD = 'hashirama2233@'
+
+handler403 = 'tutapp.views.Permissiondenied'

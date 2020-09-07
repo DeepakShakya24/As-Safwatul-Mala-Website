@@ -26,8 +26,6 @@ class AudioClip(models.Model):
 
 
 class Tajweed2(models.Model):
-    user = models.ForeignKey(
-        auth.models.User, on_delete=models.CASCADE, null=True)
     tajweed2_title = models.CharField(("Title"), max_length=200, null=True)
     tajweed2_audio_file = models.FileField(default='', blank=True)
     pub_date = models.DateField(null=True)

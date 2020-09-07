@@ -1,6 +1,6 @@
 {%extends 'base.html'%} {%block content%} {%load staticfiles%}
 <!--External CSS-->
-{%if request.user.is_superuser %}
+{%if user.is_authenticated %}
 <style type="text/css">
     html {
         font-family: "Alata", sans-serif;
@@ -222,11 +222,9 @@
     </div>
 </footer>
 {%else%}
-<script>
-    if (
-        window.confirm("Please Login with wrong credentials.Click OK for login")
-    ) {
-        window.open("https://127.0.0.1:8000/login/", "_blank");
-    }
-</script>
+<div class="jumbotron">
+    <h1>Please Login with valid Username and Password</h1>
+    <br />
+    <p><a href="{%url 'login'%}" target="_blank">Login</a></p>
+</div>
 {%endif%} {%endblock%}

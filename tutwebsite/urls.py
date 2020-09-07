@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^$', views.AudioClipList.as_view(), name='list'),
     url(r'logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^index/', views.index, name='index'),
+    url(r'^accessdenied/', views.Permissiondenied, name='accessdenied'),
     url(r'^about/', views.About, name='about'),
     url(r'^aboutus/', views.AboutUs, name='aboutus'),
     url(r'^whatistajweed/', views.Whatistajweed, name='whatistajweed'),

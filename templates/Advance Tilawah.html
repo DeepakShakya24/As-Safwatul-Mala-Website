@@ -1,6 +1,6 @@
 {%extends 'base.html'%} {%block content%} {%load staticfiles%}
 <!--External CSS-->
-{%if user.is_superuser %}
+{%if user.is_authenticated %}
 <style type='text/css'>
     html {
         font-family: 'Alata', sans-serif;

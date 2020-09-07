@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.views.generic import CreateView, DetailView, ListView
 from django.urls import reverse_lazy
 from . import forms
 from .models import AudioClip
 from django.contrib.auth.models import User
-from django.views.generic.detail import SingleObjectMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
 # Create your views here.
 
 
@@ -28,10 +29,13 @@ def homepage(request):
     return render(request, 'homepage.html')
 
 
-class AudioClipList(ListView):
+class AudioClipList(UserPassesTestMixin, ListView):
     model = AudioClip
     context_object_name = 'content'
     template_name = 'Course.html'
+
+    def test_func(self):
+        return self.request.user.username.startswith('tajweedlevel1')
 
 
 def About(request):
@@ -56,3 +60,7 @@ def Course2(request):
 
 def Course3(request):
     return render(request, 'Course3.html')
+
+
+def Permissiondenied(request):
+    return render(request, '403.html')

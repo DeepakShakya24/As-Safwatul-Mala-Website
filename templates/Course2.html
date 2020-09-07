@@ -1,6 +1,5 @@
 {%extends 'base.html'%} {%block content%} {%load staticfiles%}
 <!--External CSS-->
-{%if user.is_superuser%}
 <style type="text/css">
     html {
         font-family: "Alata", sans-serif;
@@ -95,7 +94,7 @@
         text-align: center;
     }
 </style>
-
+{%if user.is_authenticated%}
 <section id="header">
     <div class="container-fluid">
         <!-- Nav Bar -->
