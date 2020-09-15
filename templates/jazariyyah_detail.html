@@ -34,15 +34,14 @@
             <li class="list-group-item">
                 <img src="{%static 'images/anis-coquelet-LanJEVFzxPw-unsplash.jpg'%}" alt=" " class=" img-fluid img-thumbnail ">
             </li>
-            <li class="list-group-item " oncontextmenu="return false; ">
-                <audio controls width='400' controlsList="nodownload ">
-                <source src="{{jazariyyah_content_detail.jazariyaah_audio_file.url}} " type="audio/mp3"/>
+            <li class="list-group-item">
+                <audio controls autoplay style="width:100%" controlsList="nodownload ">
+                <source src="{{jazariyyah_content_detail.jazariyaah_audio_file.url}} " type="audio/mpeg"/>
               </audio>
             </li>
         </ul>
     </div>
-    <script>
-    </script>
+    <script src="{%static 'js/autoplay.js'%}"></script>
     </body>
 
 </html>

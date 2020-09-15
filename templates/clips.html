@@ -34,15 +34,15 @@
             <li class="list-group-item">
                 <img src="{%static 'images/anis-coquelet-LanJEVFzxPw-unsplash.jpg'%}" alt=" " class=" img-fluid img-thumbnail ">
             </li>
-            <li class="list-group-item " oncontextmenu="return false; ">
-                <audio controls width='400' controlsList="nodownload ">
-                <source src="{{course_detail.audio_file.url}} " type="audio/mp3"/>
+            <li class="list-group-item">
+                <audio autoplay controls style="width:100%" controlsList="nodownload ">
+                <source src="{{course_detail.audio_file.url}}" type="audio/mpeg"/>
+                Your Browser does not support audio
               </audio>
             </li>
         </ul>
     </div>
-    <script>
-    </script>
+    <script src="{%static 'js/autoplay.js'%}"></script>
     </body>
 
 </html>
