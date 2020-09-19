@@ -9,7 +9,6 @@
 
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet" />
-
     <!--Bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <!--Font Awesome CDN-->
@@ -20,6 +19,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}" />
     <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}" />
+    <script src="{%static 'build/mediaelement-and-player.min.js'%} "></script>
+    <link rel="stylesheet" href="{%static 'build/mediaelementplayer.css'%}" />
     <style type="text/css">
         .l1 {
             background: #121212;
@@ -35,14 +36,15 @@
                 <img src="{%static 'images/anis-coquelet-LanJEVFzxPw-unsplash.jpg'%}" alt=" " class=" img-fluid img-thumbnail ">
             </li>
             <li class="list-group-item">
-                <audio autoplay controls style="width:100%" controlsList="nodownload ">
-                <source src="{{course_detail.audio_file.url}}" type="audio/mpeg"/>
+                <audio style="width:auto" controlsList="nodownload">
+                <source src="{{course_detail.audio_file.url}} " type="audio/ogg "/>
                 Your Browser does not support audio
               </audio>
             </li>
         </ul>
     </div>
-    <script src="{%static 'js/autoplay.js'%}"></script>
+    <script src="{%static 'build/custom.js'%} "></script>
+
     </body>
 
 </html>
